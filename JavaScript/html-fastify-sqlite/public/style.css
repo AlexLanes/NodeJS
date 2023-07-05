@@ -1,0 +1,555 @@
+/* Import Google Fonts */
+@import url("//fonts.googleapis.com/css2?family=Bungee+Shade:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap");
+@import url("//fonts.googleapis.com/css2?family=Butterfly+Kids:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap");
+@import url("//fonts.googleapis.com/css2?family=Adamina:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap");
+@import url("//fonts.googleapis.com/css2?family=Yomogi:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap");
+
+/* message */
+  .message {
+    position:fixed;
+    z-index:1122;
+    right:1%;
+    margin-left:0px;
+    bottom:80%;
+    width:auto !important;
+    height:auto !important;
+    top:auto;
+    left:auto;
+    font-family:'Trebuchet MS','Lucida Grande','Lucida Sans Unicode','Lucida Sans',Tahoma,sans-serif;
+    font-size:22px;
+    color:#f20707;
+    font-weight:600;
+    text-align:center;
+    box-shadow:none;
+    animation: 7s ease 0s normal forwards 1 hide_message;
+  }
+  @keyframes hide_message {
+    0%   { opacity:1; }
+    66%  { opacity:1; }
+    100% { opacity:0; }
+  }
+
+/* form_login */
+  .form_login form {
+    left: 50%;
+    top: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    border-color:rgba(52,152,219,0.28);
+    border-style:solid;
+    border-width:2px;
+    padding-left:22px;
+    padding-right:22px;
+    padding-top:22px;
+    padding-bottom:22px;
+    border-top-left-radius:22px;
+    border-top-right-radius:22px;
+    border-bottom-left-radius:22px;
+    border-bottom-right-radius:22px;
+    box-shadow:0px 0px 50px 75px rgba(230,229,217,0.24);
+    text-align:center;
+    width:250px;
+    max-height:333px;
+    min-height:300px;
+  }
+  .form_login form label {
+    display: block;
+    text-align: center;
+    color: #ffffff;
+  }
+  .form_login form h1 {
+    font-family:'Bungee Shade';
+    text-align:center;
+  }
+  .form_login form input {
+    margin-bottom:11px;
+    border-top-left-radius:50px;
+    border-top-right-radius:50px;
+    border-bottom-left-radius:50px;
+    border-bottom-right-radius:50px;
+    text-align: center;
+    background: transparent;
+    outline: none;
+  }
+  .form_login form #eye {
+    cursor:pointer;
+    margin-top:3px;
+    margin-left:-22px;
+  }
+  .form_login form button {
+    border-top-left-radius:50px;
+    border-top-right-radius:50px;
+    border-bottom-left-radius:50px;
+    border-bottom-right-radius:50px;
+    background-color:#000000;
+    color:#ffffff;
+    display: block;
+    margin: 0 auto;
+    cursor:pointer;
+  }
+  .form_login form a {
+    border-top-left-radius:50px;
+    border-top-right-radius:50px;
+    border-bottom-left-radius:50px;
+    border-bottom-right-radius:50px;
+    padding-left:4px;
+    padding-right:4px;
+    padding-top:4px;
+    padding-bottom:4px;
+    float:left;
+    font-family:'Butterfly Kids', handwriting;
+    font-style:italic;
+    font-size:25px;
+    color:#ffffff;
+    background-color:transparent;
+  }
+  .form_login form i{
+    position:absolute;
+  }
+
+/* topnav */
+  .topnav {
+    background-color: #333333;
+    overflow: hidden;
+    position: fixed;
+    z-index: 1122;
+    width:99%;
+    border-top-left-radius:50px;
+    border-top-right-radius:50px;
+    border-bottom-left-radius:50px;
+    border-bottom-right-radius:50px;
+  }
+  .topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    padding-left:55px;
+    padding-right:55px;
+    font-family:'Courier New',Courier,'Lucida Sans Typewriter','Lucida Typewriter',monospace;
+    letter-spacing:1px;
+  }
+  .topnav a:hover {
+    background-color: #dddddd;
+    color: black;
+    transition-duration: 1.0s;
+  }
+  .topnav .active {
+    background-color: #04AA6D;
+  }
+  .topnav .sair {
+    float:right;
+    color:#f20707;
+    font-weight:600;
+  }
+
+/* books_table */
+  .books_table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  }
+  .books_table thead tr {
+    background-color: #81bbcf;
+    text-align: left;
+  }
+  .books_table tr th {
+    color:#000000;
+  }
+  .books_table th,
+  .books_table td {
+    padding: 12px 15px;
+    color:#ecf0f1;
+    font-family:'Adamina', serif;
+    font-size:12px;
+    text-decoration:none;
+  }
+  .books_table tbody tr {
+    border-bottom: 1px solid #dddddd;
+  }
+  .books_table tbody tr:nth-of-type(even) {
+    background-color:rgba(137,179,235,0.19);
+  }
+  .books_table tbody tr:last-of-type {
+    border-bottom: 2px solid #81bbcf;
+  }
+  .books_table tr .quantity {
+    text-align:center;
+  }
+  .books_table tr a {
+    font-size:17px;
+  }
+
+/* books */
+  .books {
+    left: 50%;
+    top: 50%;
+    position: absolute;
+    transform: translate(-50%, -55px);
+    min-width:500px;
+    max-width:555px;
+  }
+  .books header h1 {
+    font-style:italic;
+    font-size:44px;
+    font-family:'Courier New',Courier,'Lucida Sans Typewriter','Lucida Typewriter',monospace;
+    text-align:center;
+    font-weight:400;
+    line-height:11px;
+    letter-spacing:2.2px;
+    word-spacing:2.2px;
+    margin-top:-50px;
+    transform: translatey(-33px);
+  }
+
+/* rent */
+  .rent {
+    left: 50%;
+    top: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    min-width:500px;
+    max-width:555px;
+  }
+  .rent header h1 {
+    font-style:italic;
+    font-size:44px;
+    font-family:'Courier New',Courier,'Lucida Sans Typewriter','Lucida Typewriter',monospace;
+    text-align:center;
+    font-weight:400;
+    line-height:11px;
+    letter-spacing:2.2px;
+    word-spacing:2.2px;
+    margin-top:-50px;
+    transform: translatey(-22px);
+  }
+  .rent form {
+    text-align:center;
+  }
+  .rent form label {
+    display: block;
+    text-align: center;
+    font-family:'Courier New',Courier,'Lucida Sans Typewriter','Lucida Typewriter',monospace;
+    font-style:normal;
+    color:#add6e0;
+    margin-bottom:4px;
+  }
+  .rent form input {
+    margin-bottom:11px;
+    border-top-left-radius:50px;
+    border-top-right-radius:50px;
+    border-bottom-left-radius:50px;
+    border-bottom-right-radius:50px;
+    text-align: center;
+    background: transparent;
+    outline: none;
+    width:55px;
+    font-family:'Adamina', serif;
+    padding-left:16px;
+    color:#f4d71a;
+    font-weight:600;
+  }
+  .rent form select {
+    background-color:rgba(63,105,87,0.57);
+    border-top-left-radius:50px;
+    border-top-right-radius:50px;
+    border-bottom-left-radius:50px;
+    border-bottom-right-radius:50px;
+    text-align:center;
+    border: none;
+    color:#f4d71a;
+    outline: 0;
+  }
+  .rent form button {
+    background-color:transparent;
+    border-top-left-radius:50px;
+    border-top-right-radius:50px;
+    border-bottom-left-radius:50px;
+    border-bottom-right-radius:50px;
+    cursor:pointer;
+  }
+  .rent form button:hover {
+    background-color: #6398d8;
+    transition-duration: 0.4s;
+    transform: scale(1.5) perspective(1px);
+  }
+  .rent form i {
+    background-color:transparent;
+  }
+  .div_create_rent_image {
+    position:fixed;
+    top:25%;
+    left:10%;
+  }
+  .div_create_rent_image img {
+    max-width:200px;
+    max-height:200px;
+  }
+  #create_rent_description {
+    position:absolute;
+    left:6%;
+    top:66%;
+    max-width:90%;
+    text-align:center;
+    font-family:Garamond,Baskerville,'Baskerville Old Face','Hoefler Text','Times New Roman',serif;
+    font-size:22px;
+  }
+
+/* user_home */
+  .user_home {
+    left: 50%;
+    top: 50%;
+    position: absolute;
+    transform: translate(-50%, -11px);
+    min-width:500px;
+    max-width:700px;
+  }
+  .user_home header h1 {
+    font-style:italic;
+    font-size:44px;
+    font-family:'Courier New',Courier,'Lucida Sans Typewriter','Lucida Typewriter',monospace;
+    text-align:center;
+    font-weight:400;
+    line-height:11px;
+    letter-spacing:2.2px;
+    word-spacing:2.2px;
+    margin-top:-50px;
+    transform: translatey(-80px);
+  }
+  .user_home table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width:500px;
+    max-width:700px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    top:-44px;
+    position:relative;
+  }
+  .user_home table thead tr {
+    background-color: #81bbcf;
+    text-align: left;
+  }
+  .user_home table thead tr .th_delete_rent {
+    text-align: center;
+  }
+  .user_home table tr th {
+    color:#000000;
+  }
+  .user_home table th,
+  .user_home table td {
+    padding: 12px 15px;
+    color:#ecf0f1;
+    font-family:'Adamina', serif;
+    font-size:12px;
+    text-decoration:none;
+  }
+  .user_home table tbody tr {
+    border-bottom: 1px solid #dddddd;
+  }
+  .user_home table tbody tr:nth-of-type(even) {
+    background-color:rgba(137,179,235,0.19);
+  }
+  .user_home table tbody tr:last-of-type {
+    border-bottom: 2px solid #81bbcf;
+  }
+  .user_home table tr #delete_rent {
+    font-size:17px;
+    display:block;
+    color:#d10000;
+    text-align:center;
+    background-color:transparent;
+    border-color:transparent;
+    padding-top:0px;
+    padding-bottom:0px;
+    cursor:pointer;
+  }
+  .user_home table tr form {
+    display:grid;
+  }
+  .user_home table tr:hover #delete_rent {
+    transition-duration: 0.7s;
+    transform: scale(2.0) perspective(1px);
+  }
+
+/* admin_home */
+  .admin_home {
+    top:10%;
+    padding-top:5% !important;
+  }
+  .admin_home .admin_home_header h1 {
+    text-align:center;
+    font-family:'Courier New',Courier,'Lucida Sans Typewriter','Lucida Typewriter',monospace;
+    letter-spacing:2.2px;
+    word-spacing:2.2px;
+    font-style:italic;
+    font-size:44px;
+    font-weight:400;
+  }
+  .admin_home .admin_home_float_rigth,
+  .admin_home .admin_home_float_left {
+    display: inline-block;
+  }
+  .admin_home .admin_home_float_left {
+    width: 55%;
+    float: left;
+  }
+  .admin_home .admin_home_float_rigth {
+    width: 45%;
+    float: right;
+  }
+
+  /* left */
+    .admin_home .admin_home_float_left div {
+      width:100%;
+      height:100%;
+    }
+    .admin_home .admin_home_float_left div table {
+      margin:0 auto;
+    }
+    .admin_home .admin_home_float_left h1 {
+      text-align:center;
+    }
+    .admin_home .admin_home_float_left thead tr {
+      background-color:#81bbcf;
+      text-align:left;
+    }
+    .admin_home .admin_home_float_left tr th {
+      color:#000000;
+    }
+    .admin_home .admin_home_float_left th,
+    .admin_home .admin_home_float_left td {
+      padding: 12px 15px;
+      color:#ecf0f1;
+      font-family:'Adamina', serif;
+      font-size:12px;
+      text-decoration:none;
+    }
+    .admin_home .admin_home_float_left tbody tr {
+      border-bottom: 1px solid #dddddd;
+    }
+    .admin_home .admin_home_float_left tbody tr:nth-of-type(even) {
+      background-color:rgba(137,179,235,0.19);
+    }
+    .admin_home .admin_home_float_left tbody tr:last-of-type {
+      border-bottom: 2px solid #81bbcf;
+    }
+    .admin_home .admin_home_float_left header h1{
+      font-family:'Yomogi', handwriting;
+      color:#1dcda4;
+      font-size:33px;
+      line-height:33px;
+      font-style:italic;
+      text-decoration:none;
+      text-shadow:rgb(0, 0, 0) 0px 1px 1px, rgb(0, 0, 0) 0px -1px 1px, rgb(0, 0, 0) 1px 0px 1px, rgb(0, 0, 0) -1px 0px 1px;
+      letter-spacing:2.2px;
+    }
+
+  /* rigth */
+    .admin_home .admin_home_float_rigth {
+      position:fixed;
+      padding-top:4%;
+      max-width:500px;
+      padding-right:4%;
+      transform: translate(0%, -15%);
+    }
+    .admin_home .admin_action {
+      text-align:center;
+      padding-top:5px;
+      padding-bottom:4%;
+    }
+    .admin_home .admin_home_float_rigth .create_book, 
+    .admin_home .admin_home_float_rigth .update_book,
+    .admin_home .admin_home_float_rigth .delete_book,
+    .admin_home .admin_home_float_rigth .delete_registration, 
+    .admin_home .admin_home_float_rigth .update_password {
+      display: none;
+    }
+    .admin_home .admin_home_float_rigth label {
+      font-size:22px;
+      font-family:Garamond,Baskerville,'Baskerville Old Face','Hoefler Text','Times New Roman',serif;
+      line-height:22px;
+      text-shadow:none;
+      letter-spacing:2.2px;
+      box-shadow:none;
+    }
+    .admin_home .admin_home_float_rigth select {
+      text-align:center;
+      border-top-left-radius:50px;
+      border-top-right-radius:50px;
+      border-bottom-left-radius:50px;
+      border-bottom-right-radius:50px;
+      background-color:rgba(63,105,87,0.57);
+      border: none;
+      color:#f4d71a;
+      outline: 0;
+      text-align-last: center;
+    }
+    .admin_home .admin_home_float_rigth form {
+      text-align:center;
+      border-bottom-color:rgba(153,153,168,0.28);
+      border-right-color:rgba(76,122,152,0.28);
+      border-style:none;
+      box-shadow:0px 0px 50px 11px rgba(0,0,0,0.59);
+      border-top-left-radius:22px;
+      border-top-right-radius:22px;
+      border-bottom-left-radius:22px;
+      border-bottom-right-radius:22px;
+      padding-bottom:4%;
+      padding-top:1% !important;
+    }
+    .admin_home .admin_home_float_rigth form h1 {
+      font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;
+      font-weight:300;
+      color:#f4d71a;
+      letter-spacing:2.2px;
+    }
+    .admin_home .admin_home_float_rigth form input {
+      text-align: center;
+      background: transparent;
+      outline: none;
+      color:#f4d71a;
+      border-top-left-radius:50px;
+      border-top-right-radius:50px;
+      border-bottom-left-radius:50px;
+      border-bottom-right-radius:50px;
+    }
+    .admin_home .admin_home_float_rigth form button {
+      border-top-left-radius:50px;
+      border-top-right-radius:50px;
+      border-bottom-left-radius:50px;
+      border-bottom-right-radius:50px;
+      background-color:#000000;
+      color:#ffffff;
+      display: block;
+      margin: 0 auto;
+      cursor:pointer;
+    }
+    .admin_home .admin_home_float_rigth .create_book #create_book_isbn_generator {
+      cursor:pointer;
+      position:relative;
+      bottom:20px;
+      left:71px;
+      top:-19px;
+    }
+    .admin_home .admin_home_float_rigth .update_book form i:hover {
+      transition-duration: 0.4s;
+      transform: scale(1.5) perspective(1px);
+      cursor:pointer;
+    }
+    .admin_home .admin_home_float_rigth .update_book #update_book_input_name {
+      display: none;
+    }
+    .admin_home .admin_home_float_rigth .update_password #update_password_eye {
+      cursor:pointer;
+      position:relative;
+      bottom:20px;
+      left:71px;
+      top:-19px;
+    }

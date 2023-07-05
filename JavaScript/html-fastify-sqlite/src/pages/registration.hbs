@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <!-- Common head view -->
+    {{> head}}
+    <!-- Background color -->
+    <style> body{ background-image:linear-gradient(120deg, #e55d87 11%, #5fc3e4 100%);} </style>
+  </head>
+
+  <body>
+    
+    <!-- Message -->
+    {{#if message}}
+      {{> message}}
+    {{/if}}
+    
+    <!-- View registration -->
+    <div class="form_login" id="current_state" state_name="registration">
+      <!-- Form -->
+      <form method="post" action="/create/registration">
+        <!-- Return to login button -->
+        <a href="/login" class="back-icon">
+          <i class="fa-solid fa-circle-arrow-left"></i>
+        </a>
+        <!-- Header -->
+        <h1>Cadastro</h1>
+        <!-- User -->
+        <label>Usuario</label>
+        <input type="text" id="user" name="user" required />
+        <!-- Password -->
+        <label>Senha</label>
+        <input type="password" id="password" name="password" required />
+        <i class="fa-solid fa-eye" id="eye"></i>
+        <br/>
+        <!-- Input button -->
+        <button type="submit">Criar</button>
+      </form>
+    </div>
+    
+  </body>
+
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <!-- Common head view -->
+    {{> head}}   
+    <!-- Background color -->
+    <style> body{ background-image:linear-gradient(to right, #283c86 0%, #45a247 100%);} </style>
+  </head>
+
+  <body>
+    
+    <!-- Top Navigation Bar -->
+    {{> topnav}}
+    <!-- Message -->
+    {{#if message}}
+      {{> message}}
+    {{/if}}
+    
+    {{#if admin}}
+      <!-- View admin home -->
+      <div class="admin_home" id="current_state" state_name="home">
+        {{> admin_home}}
+      </div>
+    {{else}}
+      <!-- View user home -->
+      <div class="user_home" id="current_state" state_name="home">
+        {{> user_home}}
+      </div>
+    {{/if}}
+    
+  </body>
+
+</html>

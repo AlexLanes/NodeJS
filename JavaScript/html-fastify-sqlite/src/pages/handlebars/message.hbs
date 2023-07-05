@@ -1,0 +1,15 @@
+<div class="message">
+  <!-- Error message -->
+  {{#if message.error}}
+    <label class="message_error">{{message.error}}</label>
+    <a><i  class="fa-solid fa-exclamation"></i></a>
+    <a><i  class="fa-solid fa-bomb"></i></a>
+    <a><i  class="fa-solid fa-triangle-exclamation"></i></a>
+  <!-- Success message -->
+  {{else}}
+    <label class="message_success">{{message.success}}</label>
+    <a><i  class="fa-solid fa-check"></i></a>
+    <a><i  class="fa-solid fa-thumbs-up"></i></a>
+    <a><i  class="fa-solid fa-face-laugh-beam"></i></a>
+  {{/if}}
+</div>

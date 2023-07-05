@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <!-- Common head view -->
+    {{> head}}   
+    <!-- Background color -->
+    <style> body{ background-image:linear-gradient(to right, #283c86 0%, #45a247 100%);} </style>
+  </head>
+
+  <body>
+    
+    <!-- Top Navigation Bar -->
+    {{> topnav}}
+    <!-- Message -->
+    {{#if message}}
+      {{> message}}
+    {{/if}}
+    
+    <!-- View rent -->
+    <div class="rent" id="current_state" state_name="rent">
+      <!-- Title -->
+      <header>
+        <h1>Aluguel de Livro</h1>
+      </header>
+      <!-- Form -->
+      <form method="post" action="/create/rent" id="form_create_rent">
+        <!-- Duration -->
+        <label>Duração em Dias</label>
+        <input type="number" id="days" name="days" min="1" required />
+        <!-- Book -->
+        <label>Escolha um Livro</label>
+        <select id="create_rent_select_book" name="book" required>
+          <option disabled>Escolha um Livro</option>
+          {{#each books}}
+            <option value="{{isbn}}" description="{{description}}" image="{{image}}">{{name}}</option>
+          {{/each}}
+        </select><p/>
+        <!-- Submit -->
+        <button type="submit">
+          <i class="fa-solid fa-book"></i>
+        </button>  
+      </form>
+    </div>
+    
+    <div class="div_create_rent_image">
+      <img id="create_rent_image" src="{{img}}">
+    </div>
+    <br/>    
+    <label id="create_rent_description"></label>
+    
+  </body>
+
+</html>

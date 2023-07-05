@@ -1,0 +1,220 @@
+<header class="admin_home_header">
+  <h1>Espaço Admin</h1>
+</header>
+<div class="admin_home_float_left">
+  
+  <div class="admin_home_rents">
+    <header>
+      <h1>Aluguéis Realizados</h1>
+    </header>
+    <table>
+      <thead>
+        <tr>
+          <th>ISBN</th>
+          <th>Nome</th>
+          <th>Entrega</th>
+          <th>Usuário</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each rents}}
+          <tr>
+            <td>{{isbn}}</td>
+            <td>{{name}}</td>
+            <td>{{end_date}}</td>
+            <td>{{user}}</td>
+          </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+  <div class="admin_home_books0">
+    <header>
+      <h1>Livros sem Estoque</h1>
+    </header>
+    <table>
+      <thead>
+        <tr>
+          <th>ISBN</th>
+          <th>Nome</th>
+          <th>Autor</th>
+          <th>Páginas</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each books0}}
+          <tr>
+            <td>{{isbn}}</td>
+            <td>{{name}}</td>
+            <td>{{author}}</td>
+            <td>{{pages}}</td>
+          </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+  <div class="admin_home_users">
+    <header>
+      <h1>Usuários Cadastrados</h1>
+    </header>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Usuario</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each users}}
+          <tr>
+            <td>{{id}}</td>
+            <td>{{user}}</td>
+          </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+  
+</div>
+<div class="admin_home_float_rigth">
+  
+  <div class="admin_action">
+    <label>Ações</label><br/>
+    <select id="admin_action">
+      <option disabled>Selecione uma Ação</option>
+      <option value="create_book">Criar Livro</option>
+      <option value="update_book">Alterar Livro</option>
+      <option value="delete_book">Apagar Livro</option>
+      <option value="update_password">Alterar Senha</option>      
+      <option value="delete_registration">Apagar Usuário</option>
+    </select>
+  </div>
+  <div class="create_book" id="create_book">
+    <form method="post" action="/create/book">
+      <h1>Criar Livro</h1>
+      <!-- ISBN -->
+        <label>ISBN</label><br/>
+        <input type="text" id="create_book_input_isbn" name="isbn" required /><br/>
+        <i id="create_book_isbn_generator" class="fa-solid fa-shuffle"></i><br/>
+      <!-- Name -->
+        <label>Nome</label><br/>
+        <input type="text" id="name" name="name" minlength="1" required /><br/>
+      <!-- Author -->
+        <label>Autor</label><br/>
+        <input type="text" id="author" name="author" minlength="1" required /><br/>
+      <!-- Pages -->
+        <label>Páginas</label><br/>
+        <input type="number" id="pages" name="pages" min="1" required /><br/>
+      <!-- Quantity -->
+        <label>Quantidade</label><br/>
+        <input type="number" id="quantity" name="quantity" min="1" required /><br/>
+      <!-- Image -->
+        <label>Url Imagem</label><br/>
+        <input type="text" id="image" name="image" /><br/>
+      <!-- Description -->
+        <label>Descrição</label><br/>
+        <input type="text" id="description" name="description" /><br/><br/>
+      <!-- Input Button -->
+        <button type="submit">Cadastrar</button><br/>
+    </form>
+  </div>
+  <div class="update_book" id="update_book">
+    <form method="post" action="/update/book">
+      <h1>Alterar Livro</h1>
+      <!-- ISBN -->
+        <label>ISBN</label><br/>
+        <input type="text" id="isbn" name="isbn" required readonly /><br/>
+      <!-- Name -->
+        <label>Nome</label>
+        <i id="update_book_edit_icon" class="fa-regular fa-pen-to-square"></i><br/>
+        <select id="update_book_select_name" name="name">
+          <option disabled>Selecione um Nome</option>
+          {{#each books}}
+            <option isbn="{{isbn}}" value="{{name}}" author="{{author}}" pages="{{pages}}" quantity="{{quantity}}" image="{{image}}" description="{{description}}">{{name}}</option>
+          {{/each}}
+        </select>
+        <input id="update_book_input_name" name="name" required disabled/><br/>
+      <!-- Author -->
+        <label>Autor</label><br/>
+        <input type="text" id="author" name="author" minlength="1" required /><br/>
+      <!-- Pages -->
+        <label>Páginas</label><br/>
+        <input type="number" id="pages" name="pages" min="1" required /><br/>
+      <!-- Quantity -->
+        <label>Quantidade</label><br/>
+        <input type="number" id="quantity" name="quantity" min="0" required /><br/>
+      <!-- Image -->
+        <label>Url Imagem</label><br/>
+        <input type="text" id="image" name="image" /><br/>
+      <!-- Description -->
+        <label>Descrição</label><br/>
+        <input type="text" id="description" name="description" /><br/><br/>      
+      <!-- Input Button -->
+        <button type="submit">Alterar</button><br/>
+    </form>
+  </div>
+  <div class="delete_book" id="delete_book">
+    <form method="post" action="/delete/book">
+      <h1>Apagar Livro</h1>
+      <!-- ISBN -->
+        <label>ISBN</label><br/>
+        <select id="delete_book_select_isbn" name="isbn">
+          <option disabled>Selecione um ISBN</option>
+          {{#each books}}
+            <option value="{{isbn}}" name="{{name}}">{{isbn}}</option>
+          {{/each}}
+        </select><br/>
+      <!-- Name -->
+        <label>Nome</label><br/>
+        <select id="delete_book_select_name" name="name">
+          <option disabled>Selecione um Nome</option>
+          {{#each books}}
+            <option value="{{name}}" isbn="{{isbn}}">{{name}}</option>
+          {{/each}}
+        </select><br/><br/>
+      <!-- Input Button -->
+        <button type="submit">Apagar</button><br/>
+    </form>
+  </div>
+  <div class="update_password" id="update_password">
+    <form method="post" action="/update/password">
+      <h1>Alterar Senha</h1>
+      <!-- ID -->
+        <label>ID</label><br/>
+        <input id="update_password_input_id" name="id" readonly /><br/>
+      <!-- Name -->
+        <label>Usuário</label><br/>
+        <select id="update_password_select_user" name="user">
+          <option disabled>Selecione um Usuário</option>
+          {{#each users}}
+            <option value="{{user}}" user_id="{{id}}">{{user}}</option>
+          {{/each}}
+        </select><br/>
+      <!-- Password -->
+        <label>Senha</label><br/>
+        <input type="password" id="update_password_input_password" name="password" required /><br/>
+        <i class="fa-solid fa-eye" id="update_password_eye"></i><br/>
+      <!-- Input Button -->
+        <button type="submit">Alterar</button><br/>
+    </form>
+  </div>
+  <div class="delete_registration" id="delete_registration">
+    <form method="post" action="/delete/registration">
+      <h1>Apagar Usuário</h1>
+      <!-- ID -->
+        <label>ID</label><br/>
+        <input id="delete_registration_input_id" name="id" readonly /><br/>
+      <!-- Name -->
+        <label>Usuário</label><br/>
+        <select id="delete_registration_select_user" name="user">
+          <option disabled>Selecione um Usuário</option>
+          {{#each users}}
+            <option value="{{user}}" user_id="{{id}}">{{user}}</option>
+          {{/each}}
+        </select><br/><br/>
+      <!-- Input Button -->
+        <button type="submit">Apagar</button><br/>
+    </form>
+  </div>
+  
+</div>

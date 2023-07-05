@@ -1,0 +1,30 @@
+{
+	"name": "rpachallengeocr",
+	"version": "1.0.0",
+	"description": "Desafio rpa ocr",
+	"main": "./out/main.js",
+	"type": "module",
+	"license": "ISC",
+	"keywords": [
+		"rpa",
+		"ocr",
+		"typescript",
+		"selenium-webdriver"
+	],
+	"author": {
+		"name": "alex lanes angelo"
+	},
+	"scripts": {
+		"start": "node ./out/main.js",
+		"prestart": "npm run build",
+		"build": "tsc"
+	},
+	"dependencies": {
+		"selenium-webdriver": "^4.10.0",
+		"typescript": "^5.1.6",
+		"xlsx": "^0.18.5"
+	},
+	"devDependencies": {
+		"@types/selenium-webdriver": "^4.1.15"
+	}
+}
